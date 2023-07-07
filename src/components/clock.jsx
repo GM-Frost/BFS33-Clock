@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-const clock = () => {
-  let time = new Date().toLocaleTimeString();
-  const [currentTime, setCurrentTime] = useState(time);
+const clock = ({ title, dateTime }) => {
+  const [currentTime, setCurrentTime] = useState(dateTime);
 
   useEffect(() => {
     const changeTime = setInterval(() => {
@@ -17,7 +16,7 @@ const clock = () => {
     <>
       <div>
         <h1 className="title">
-          Current Time is <br />
+          {title} <br />
           <br />
           <span className="clock">{currentTime}</span>
         </h1>
